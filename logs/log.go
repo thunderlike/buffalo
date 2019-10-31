@@ -3,6 +3,7 @@ package logs
 import (
 	"fmt"
 	"github.com/thunderlike/buffalo/utils/file"
+	"io"
 	"log"
 	"os"
 	"path/filepath"
@@ -39,8 +40,8 @@ func Setup() {
 	if err != nil {
 		log.Fatalf("logging.Setup err: %v", err)
 	}
-
-	logger = log.New(F, DefaultPrefix, log.LstdFlags)
+	mw := io.MultiWriter(os.Stdout, F)
+	logger = log.New(mw, DefaultPrefix, log.LstdFlags)
 }
 
 // Debug output logs at debug level

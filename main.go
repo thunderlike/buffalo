@@ -6,7 +6,6 @@ import (
 	"github.com/thunderlike/buffalo/logs"
 	"github.com/thunderlike/buffalo/routers"
 	"github.com/thunderlike/buffalo/setting"
-	"log"
 	"net/http"
 )
 
@@ -32,8 +31,7 @@ func main() {
 		MaxHeaderBytes: maxHeaderBytes,
 	}
 
-	log.Printf("[info] start http server listening %s", endPoint)
-
+	logs.Info("start http server listening " + endPoint)
 	server.ListenAndServe()
 
 	// If you want Graceful Restart, you need a Unix system and download github.com/fvbock/endless
