@@ -69,9 +69,14 @@ func Error(v ...interface{}) {
 }
 
 // Fatal output logs at fatal level
-func Fatal(v ...interface{}) {
+func Fatalln(v ...interface{}) {
 	setPrefix(FATAL)
 	logger.Fatalln(v)
+}
+
+func Fatalf(format string, v ...interface{}) {
+	setPrefix(FATAL)
+	log.Fatalf(format, v)
 }
 
 // setPrefix set the prefix of the log output

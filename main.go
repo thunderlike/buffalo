@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"github.com/gin-gonic/gin"
 	"github.com/thunderlike/buffalo/logs"
+	"github.com/thunderlike/buffalo/models"
 	"github.com/thunderlike/buffalo/routers"
 	"github.com/thunderlike/buffalo/setting"
 	"net/http"
@@ -12,6 +13,7 @@ import (
 func init() {
 	setting.Setup()
 	logs.Setup()
+	models.Setup()
 }
 
 func main() {
