@@ -1,2 +1,2 @@
 # buffalo
-quick startup for go web develop
+Go-web develop quick start project.
